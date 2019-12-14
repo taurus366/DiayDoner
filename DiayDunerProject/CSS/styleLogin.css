@@ -1,0 +1,40 @@
+@import url("backroundLogin.css");
+
+body {
+    max-width: 72em;
+    margin: auto;
+   
+}
+
+
+h1 {
+    color: chartreuse;
+    text-align: center;
+    margin-top: 2.5cm;
+    font-size: 50px;
+}
+
+main {
+    text-align: center;
+}
+
+p {
+    margin-top: 1cm;
+}
+
+div {
+    margin-top: 7.5cm;
+}
+
+input {
+    text-align: center;
+    border-color: yellowgreen;
+    font-size: 15px;
+}
+
+button {
+    background: rgb(111, 219, 129);
+    color: white;
+    border-color: rgb(0, 162, 40);
+    font-size: 15px;
+}

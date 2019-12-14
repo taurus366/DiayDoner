@@ -1,0 +1,11 @@
+body {
+   background-image: url("../images/doner.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: black;
+    background-size: 80% 100%;
+    width: auto;
+    height: auto;
+    
+    }

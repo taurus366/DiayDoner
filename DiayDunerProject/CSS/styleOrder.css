@@ -1,0 +1,50 @@
+@import url("backroundOrder.css");
+
+div {
+    max-width: 72em;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color:whitesmoke;
+    margin-top: 0.5em;
+    font-family: cursive;
+    font-size: 56px;
+    color: chartreuse;
+
+}
+
+.container-form {
+    text-align: center;
+}
+input {
+    margin-bottom: 0.2cm;
+    padding: 0 0 0 0;
+    
+}
+.firstname , .secondname , .thirdname , .address {
+    width: 10em;
+    text-align: center;
+}
+.phone {
+width: 3.8cm;
+text-align: center;
+}
+.border-submit {
+   
+    background: rgb(111, 179, 219);
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold 15px arial, sans-serif;
+    text-shadow: none;
+}
+input {
+    margin-top: 0.1cm;
+}
+p {
+    margin-top: 0.8cm;
+}

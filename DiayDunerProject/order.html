@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="CSS/styleOrder.css">
+    <script src="JS/scriptOrder.js"></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Поръчка</title>
+</head>
+<body>
+
+    <div>
+        <header><h1>ПОРЪЧКА</h1></header>
+
+        <main>
+           
+            <div class="container-form">
+
+                <form action="http://localhost:8081/Duner/rest/order" method="POST"   onsubmit="thankyouMessage()">
+               
+                    <input class="firstname" id="firstname" placeholder="ИМЕ" name="firstname" type="text" required>
+                    <p><input class="secondname" id="secondname" placeholder="ПРЕЗИМЕ" name="secondname" type="text" required></p>
+                    <p><input class="thirdname" id="thirdname" placeholder="ФАМИЛИЯ" name="thirdname" type="text" required></p>
+                    <p><input class="address" id="address" placeholder="АДРЕС" name="address" type="text" required></p>
+                    <p><input class="phone" id="phone" placeholder="ТЕЛЕФОН 0899999999" name="telephone" type="tel" pattern="[0][0-9]{9}" maxlength="10" required></p>
+                   
+                    <p><select id="city" name="city" required>
+                    <option value="" selected disabled hidden>Избери</option>
+                    <option value="Медовец">Медовец 1.50лв</option>
+                    <option value="Поляците">Поляците 2.50лв</option>
+                    <option value="Лопушна">Лопушна 2.50лв</option>
+                    </select></p>
+                
+                   
+                   
+                
+                          
+                    <p><input class="border-submit" type="submit" value="Поръчай"></p>
+            
+             </form>
+
+            </div>
+        </main>
+
+
+
+    </div>
+    
+</body>
+</html>

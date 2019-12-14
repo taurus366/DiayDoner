@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="CSS/styleIndex.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="JS/scriptIndex.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>DIAY DONER</title>
+</head>
+
+<body>
+
+        
+    
+<div>
+    <header>
+        <h1>DIAY DONER</h1>
+    </header>
+    <main>
+         <div class="container-main">
+
+            <form action="http://localhost:8081/Duner/rest/cart" method="POST" onsubmit="return required(select)">
+               
+                    <select id="select" class="select" name="select">
+                        <option value="Меню">Меню</option>
+                    </select>
+
+                <p class="checkbox-type">
+                   <input type="checkbox" name="ketchup" value="кетчуп">Кетчуп
+                   <input type="checkbox" name="mayonnaise" value="Майонеза"> Майонеза
+                   <input type="checkbox" name="chili" value="Чили">Чили
+                   <input type="checkbox" name="spotted_salt" value="Шарена сол">Шарена сол
+                </p>
+                    <p class="checkbox-type2">
+                        <input type="checkbox" name="кетчуп" value="кетчуп">Кетчуп
+                        <input type="checkbox" name="Майонеза" value="Майонеза"> Майонеза
+                        <input type="checkbox" name="Шарена сол" value="Без кетчуп">Шарена сол
+                        <input type="checkbox" name="Чили" value="Чили">Чили
+                    </p>
+                  
+
+                   
+                <button type="submit" class="border-submit"> <i class="fa fa-cart-plus fa-fw" style="font-size: 20px;"></i>Добави в кошница<i class="fa fa-cart-plus fa-fw" style="font-size: 20px;"></i></button>
+                          
+            </form>
+           <p> <a href="https://diaydoner.000webhostapp.com/cart.html" onclick="return checkCookie()"> <i class="fa fa-shopping-cart fa-fw" style="font-size: 20px;"> </i>Виж кошницата <i class="fa fa-shopping-cart" style="font-size: 20px;"> </i> </a> </p>
+          
+        </div>   
+      
+    </main>
+    
+
+</div>
+
+
+</body>
+</html>

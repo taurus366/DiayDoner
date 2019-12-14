@@ -1,0 +1,73 @@
+@import "backroundIndex.css";
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap');
+
+div {
+max-width: 72em;
+margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color:whitesmoke;
+    margin-top: 0.5em;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 56px;
+    
+
+}
+
+.container-main {
+    text-align: center;
+}
+
+input {
+    margin-bottom: 0.2cm;
+    padding: 0 0 0 0;
+    
+}
+
+
+@media only screen and (max-width:800px) {
+    /* For tablets: */
+    body {
+        background-size: 80% 100%;
+    }
+  }
+
+  .firstname , .secondname , .thirdname , .address {
+      width: 10em;
+      text-align: center;
+  }
+  .phone {
+width: 3.8cm;
+  }
+
+  .image {
+      
+      
+      border-style: solid;
+      width: 300px;
+  }
+  div {
+    text-align: left;
+  }
+
+  .border-submit {
+   
+      background: rgb(111, 179, 219);
+      color: white;
+      border-style: outset;
+      border-color: #0066A2;
+      height: 50px;
+      width: 100px;
+      font: bold 15px arial, sans-serif;
+      text-shadow: none;
+  }
+
+  p {
+      color: rgb(255, 0, 221);
+      font-size: 25px;
+      
+  }
+
+  

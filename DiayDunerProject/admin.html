@@ -1,0 +1,213 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page pageEncoding="UTF-8" %>
+<%
+String cookies123 = null;
+Cookie cookie = null;
+Cookie[] cookies = null;
+cookies = request.getCookies();
+if(cookies != null){
+    for(int i = 0; i < cookies.length; i++){
+        cookie = cookies[i];
+        String b =cookie.getValue();
+
+        if(cookie.getName().equals("myStrAdmin")){
+
+            cookies123 = cookie.getValue();
+        }
+    }
+}else {
+    
+    String redirectURL = "http://diaydoner.000webhostapp.com/login.html";
+    response.sendRedirect(redirectURL);
+
+}
+
+String driver = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://remotemysql.com:3306/";
+String database = "UkfOir9In3";
+String userid = "UkfOir9In3";
+String password = "mTRtSyvOkw";
+try {
+Class.forName(driver);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+
+%>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/styleAdmin.css">
+    <title>Админ панел</title>
+</head>
+<body>
+
+    <div>
+
+        <header>
+            <h1>АДМИН ПАНЕЛ</h1>
+        </header>
+
+        
+           <form action="" method="post"></form>
+           
+                <table  border="1" align="left" style="width: fit-content;">
+                    <th class="th1">Време на поръчка</th>
+                    <th class="th1">Адрес</th>
+                    <th class="th1">Телефон</th>
+                    <th class="th1">Име</th>
+                    <th class="th1">Презиме</th>
+                    <th class="th1">Фамилия</th>
+                    <th class="th1">Място</th> 
+                    <th class="th1">Храна</th>
+                    <th class="th1">Потвърди</th>
+
+                    <%
+                      	try{
+                      connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+                      statement=connection.createStatement();
+                      String sql ="select
+                      or_ad.`id`,
+                      or_ad.`firstname` as 'Име',
+                      or_ad.`secondname` as 'Презиме',
+                      or_ad.`thirdname` as 'Фамилия',
+                      or_ad.`address` as 'Адрес',
+                      or_ad.`phone` as 'Телефон',
+                      or_ad.`city` as 'Село',
+                      or_ad.`ordered_time` as 'Време на поръчката',
+                      GROUP_CONCAT( ar.`title`, '~== ',
+                      'кетчуп:',
+                      or_ar.`ketchup`, '/ ',
+                       'майонеза:',
+                      or_ar.`mayonnaise` , '/ ',
+                      'чили:',
+                      or_ar.`chili`  , '/ ',
+                      'шарена сол:',
+                      or_ar.`spotted_salt`   SEPARATOR ' (!,!) ' ) as 'Закуска'
+                      from `orders_address` as or_ad
+                      left join `orders_article` as or_ar on or_ad.`id` = or_ar.`order_id`
+                      left join `articles` as ar on or_ar.`article_id` = ar.`id`
+                      group by  or_ad.`id`
+                      ORDER BY hour(or_ad.`ordered_time`) asc";
+                      resultSet = statement.executeQuery(sql);
+                      		int i = 0;
+                      		while (resultSet.next()) {
+                      %>
+
+                      <tr>
+                        <td><textarea readonly id="" cols="21" rows="4"><%=resultSet.getString("Време на поръчката") %></textarea></td>
+                        <td><textarea readonly id="" cols="17" rows="4"><%=resultSet.getString("Адрес") %></textarea></td>
+                        <td><textarea readonly id="" cols="17" rows="4"><%=resultSet.getString("Телефон") %></textarea></td>
+                        <td><textarea readonly id="" cols="17" rows="4"><%=resultSet.getString("Име") %></textarea></td>
+                        <td><textarea readonly id="" cols="17" rows="4"><%=resultSet.getString("Презиме") %></textarea></td>
+                        <td><textarea readonly id="" cols="17" rows="4"><%=resultSet.getString("Фамилия") %></textarea></td>
+                        <td><textarea readonly id="" cols="17" rows="4"><%=resultSet.getString("Село") %></textarea></td>
+                        <td><textarea readonly id="" cols="80" rows="4"><%=resultSet.getString("Закуска") %></textarea></td>
+                        <td><button type="submit" name="button" value=<%=resultSet.getString("id") %></button></td>
+
+
+                      </tr>
+
+
+
+
+                      <%
+                      i++;
+                      }
+                      connection.close();
+                      } catch (Exception e) {
+                      e.printStackTrace();
+                      }
+                      %>
+
+                        <tr>
+                            <td><textarea readonly id="" cols="21" rows="4">2019-12-11 10:45:44</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="80" rows="4">Дюнер-хлебче~== кетчуп:не/ майонеза:да/ чили:не/ шарена сол:не (!,!) Джоб с кашкавал~== кетчуп:не/ майонеза:да/ чили:не/ шарена сол:не'</textarea></td>
+                            <td><button type="submit">Потвърди</button></td>
+                        </tr>
+                        <tr>
+                            <td><textarea readonly id="" cols="21" rows="4">2019-12-11 10:45:44</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="17" rows="4">test</textarea></td>
+                            <td><textarea readonly id="" cols="80" rows="4">Дюнер-хлебче~== кетчуп:не/ майонеза:да/ чили:не/ шарена сол:не (!,!) Джоб с кашкавал~== кетчуп:не/ майонеза:да/ чили:не/ шарена сол:не'</textarea></td>
+                            <td><button type="submit">Потвърди</button></td>
+                        </tr>
+                        
+
+                </table>
+
+           
+
+           <div class="article-table">
+                <h2>Добавяне на нов Артикул в базата данни</h2>
+                <form action="#" method="post">
+                       
+                    
+                    <p>Име <input type="text" name="title"></p>
+                    
+                    <p>Цена <input type="text" name="price"></p>
+    
+                    <button type="submit">Добави</button>
+                   </form>
+                </div>
+        
+
+       <div class="delete-table">
+
+        <h2>Изтриване артикул от базата данни</h2>
+
+        <table  border="1" align="center" style="width: fit-content;">
+           
+            <th>Име</th>
+            <th>Цена</th>
+            <th></th>
+
+            <tr>
+               
+                <td>дюнер</td>
+                <td>1.23лв</td>
+                <td><button type="submit">Изтрий</button></td>
+
+            </tr>
+        </table>
+       </div>
+                
+              
+
+
+
+
+            
+
+
+
+    </div>
+    
+</body>
+</html>

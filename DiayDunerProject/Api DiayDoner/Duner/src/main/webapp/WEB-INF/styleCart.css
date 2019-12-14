@@ -1,0 +1,73 @@
+<%@include file="backroundCart.css"%>
+
+
+
+div {
+    max-width: 72em;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color:whitesmoke;
+    margin-top: 0.5em;
+    font-family: cursive;
+    font-size: 56px;
+    color: chartreuse;
+
+}
+
+/** TABLE!!! **/
+th {
+    color: chartreuse;
+}
+td {
+    color: rgb(203, 206, 40);
+}
+table {
+    margin-top: 6em;
+    border-color: chartreuse;
+    font-size: 0.7cm;
+    background-color: rgba(0, 0, 0, 0.507);
+    
+}
+textarea {
+    background-color: rgba(255, 255, 255, 0.753);
+    color: black;
+    font-size: 0.7em;
+}
+
+td > button {
+    background: rgb(111, 179, 219);
+    
+    font-size: 0.7em;
+   
+}
+td {
+	text-align: center;
+}
+ a {
+    background: rgb(111, 179, 219);
+      color: white;
+      border-style: outset;
+      border-color: #0066A2;
+      height: 50px;
+      width: 160px;
+      font: bold 15px arial, sans-serif;
+      text-shadow: none;
+      padding-top: 0.2cm; 
+      padding-bottom: 0.2cm; 
+      padding-right: 0.1cm;
+      padding-left: 0.1cm;
+      text-decoration: none;
+      cursor: pointer;
+       
+      
+  }
+ p {
+      color: rgb(0, 225, 255);
+      font-size: 30px;
+       text-align: center;
+       padding-left: 0.5em;
+      
+  }

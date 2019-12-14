@@ -1,0 +1,41 @@
+
+    
+    h1 {
+        text-align: center;
+        color:rgba(124, 212, 66, 0.884);
+        margin-top: 0.5em;
+        font-family: 'Alfa Slab One', cursive;
+        font-size: 56px;
+    }
+
+    .th1{
+        color:rgba(59, 49, 196, 0.884);
+        font-size: 20px;
+        padding-right: 0.1cm;
+        padding-left: 0.1cm;
+    }
+    td > button {
+        color: blue;
+        width: 95px;
+    }
+
+   
+
+
+    .article-table {
+        text-align: center;
+       padding-top: 20em;
+     
+    }
+
+     h2 {
+        color: chartreuse;
+    }
+
+    .delete-table {
+        text-align: center;
+        margin-top: 3cm;
+    }
+
+   
+    

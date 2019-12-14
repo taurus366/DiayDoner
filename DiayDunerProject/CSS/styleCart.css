@@ -1,0 +1,45 @@
+@import url("backroundCart.css");
+
+
+
+div {
+    max-width: 72em;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color:whitesmoke;
+    margin-top: 0.5em;
+    font-family: cursive;
+    font-size: 56px;
+    color: chartreuse;
+
+}
+
+/** TABLE!!! **/
+th {
+    color: chartreuse;
+}
+td {
+    color: rgb(203, 206, 40);
+}
+table {
+    margin-top: 6em;
+    border-color: chartreuse;
+    font-size: 0.7cm;
+    background-color: rgba(0, 0, 0, 0.507);
+    
+}
+textarea {
+    background-color: rgba(255, 255, 255, 0.753);
+    color: black;
+    font-size: 0.7em;
+}
+
+td > button {
+    background: rgb(111, 179, 219);
+    
+    font-size: 0.7em;
+   
+}
